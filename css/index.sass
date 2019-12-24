@@ -1,0 +1,682 @@
+// 変数の設定    
+$pc: 960px
+$sp: 480px
+
+$hd-color: white//ヘッダーの色
+$mn-color: #F7F3ED//メイン部分の色 
+$sd-color: #F0EBE4//サイドバーの色
+$ft-color: #e8d1ff//フッターの色
+
+@mixin font()
+    font-family: "Meiryo", "Hiragino kaku Gothic ProN", sans-serif//'M PLUS Rounded 1c', sans-serif
+    // font-weight: 400
+    color: #555555
+
+// メディアクエリ
+@mixin pc 
+  @media (min-width: ($pc)) 
+    @content
+      
+  
+@mixin sp 
+  @media (max-width: ($sp))
+    @content
+    
+// 共通部分
+
+html
+    p,li,a 
+        font-size: 15px
+        list-style: none
+        text-decoration: none
+        @include font
+    h2
+        font-size: 30px
+        @include font
+    h3
+        font-size: 20px
+        @include font()
+
+.fbox
+    display: flex
+.pc-only
+    @include sp
+        display: none
+.sp-only
+    @include pc
+        display: none
+
+// ヘッダー部分
+
+header
+    width: 100vw
+    height: 100px
+    position: fixed
+    background-color: $hd-color
+    z-index: 100
+    @include sp
+        height: 50px
+.logo
+    width: 15%
+    height: 100%
+    text-align: center
+    @include sp
+        width: 30%
+    img
+        height: 100%
+        width: auto
+.search-box
+    width: 30%
+    height: 100%
+    #form1 
+        position: relative //フォームの相対位置
+        max-width: 270px //フォームのサイズ
+        margin-bottom: 15px //フォームの下に余白
+    #sbox //検索ボックス
+        position: absolute //フォームの絶対位置	
+        left: 41px
+        top: 20px
+        outline: 0 //クリック時の青い枠線消す
+        height: 50px //検索ボックスの高さ
+        padding: 0 10px //テキスト位置調整
+        border: 1px solid #D7D2CC
+        border-radius: 5px 0 0 5px //検索ボックスの角を丸める
+        //background: #eee //検索ボックスの背景カラー
+        background-color: #fff
+    #sbtn //検索ボタン
+        width: 70px //検索ボタンの横幅 
+        height: 50px //検索ボタンの縦幅 
+        position: absolute //検索ボタンの絶対位置  
+        left: 270px //検索ボタンの位置調整
+        top: 20px
+        border-radius: 0 5px 5px 0 //検索ボタンの角を丸める 
+        //background: #7fbfff //検索ボタンの背景カラー 
+        background-color: #8B7F78
+        border: none //検索ボタンの枠線を消す
+        color: #fff //検索ボタンのテキストカラー 
+        font-weight: bold //検索ボタンのテキスト太字 
+        font-size: 16px //検索ボタンのフォントサイズ
+        &:hover //検索ボタンマウスオーバー時
+            color: #666 //検索ボタンマウスオーバー時のフォントカラー
+.pc-nav
+    width: 55%
+    height: 100%
+    padding: 30px 20px
+    ul
+        justify-content: flex-end
+        li
+            font-size: 0.9rem
+            margin: 0px 20px
+            // transition-duration: 0.7s
+            &:hover
+                font-weight: bold
+                color: #F2646E
+                // transition-duration: 0.7s
+
+// フッター
+
+footer
+    width: 100%
+    // height: 50vh
+    background-color: 
+    position: relative
+    top: 100px
+    z-index: 99
+    .w-inner
+        height: 100%
+        width: 100%
+        .cont-inner
+            width: 100%
+            height: 100%
+            padding: 3rem
+            @include sp
+                padding: 1rem
+            .fot-info
+                width: 100%
+                height: 80%
+                text-align: center
+                justify-content: center
+                @include sp
+                    flex-direction: column
+                div
+                    width: 300px
+                    height: 300px
+                    position: relative
+                    background-color: #fff
+                    // border: 1px double #a1a1a1
+                    padding: 2rem
+                    margin: 1rem
+                    @include sp
+                        width: 100%
+                        padding: 1rem
+                        margin: 1rem 0
+                    h3
+                        font-size: 1rem
+                        border-bottom: 2px solid #a1a1a1
+                        margin: 1rem 0
+                    .tel
+                        font-size: 1.3rem
+                        font-weight: bold
+            .fot-logo
+                // width: 30%
+                // height: 10%
+                text-align: center
+                margin: 0 auto
+                img
+                    height: 50px
+                    width: auto
+            ul
+                height: 10%
+                justify-content: center
+                flex-wrap: wrap
+                li
+                    display: inline-block
+                    border-left: 1px solid #f7f7f7
+                    margin: 0 1rem
+#copyright
+    text-align: center
+    padding-top: 20px
+    font-size: 0.6em
+
+.btn-sticky 
+  position: absolute
+  width: 200px
+  bottom: 10%
+  left: 0
+  right: 0
+  margin: auto
+  display: inline-block
+  padding: 0.5em 1em
+  text-decoration: none
+  background: #f7f7f7
+  border-left: solid 6px #ff7c5c
+  color: #ff7c5c
+  font-weight: bold
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29)
+
+
+.btn-sticky:active 
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1)
+  transform: translateY(2px)
+             
+    
+        
+
+
+// サイドバー
+.sidebar
+    width: 200px
+    height: calc(100vh - 100px)
+    position: fixed
+    top: 100px
+    background-color: $sd-color
+    z-index: 98
+    ul
+        padding: 40px 0px
+        li
+            margin: 0px auto
+            padding: 10px 20px
+            // border-bottom: 1px solid rgba(117, 117, 117, 0.5)
+            &:hover
+                background-color: #E6E1DB
+                font-weight: 700
+            img
+                width: 30px
+                height: 30px
+                margin-right: 10px
+            a
+                vertical-align: top
+                line-height: 2
+            .nav-child
+                visibility: hidden
+                position: fixed
+                top: 100px
+                left: 200px
+                width: 200px
+                height: 100vh
+                background-color: #E6E1DB
+
+// メイン部分
+.main
+    @include pc
+        width: calc(100vw - 200px)
+        position: relative
+        top: 50px
+        left: 200px
+        background-color: $mn-color
+    @include sp
+        width: 100vw
+        
+.w-inner
+    background-color: #F7F3ED
+    width: 100%
+    margin: 0 auto
+    @include pc
+        margin: 0 auto
+    @include sp
+        width: 100%
+
+.cont-inner
+    background-color: #F7F3ED
+    width: 100%
+    // padding: 10px
+    @include pc
+        max-width: 1180px
+        margin: 0 auto
+        // padding: 10px
+    @include sp
+        width: 95%
+        margin: 0 auto
+        padding: 0.1rem
+
+
+// PICKUPエリア
+.pickup-wrapper
+    @include pc
+        width: calc(100vw - 200px)
+        position: relative
+        top: 100px
+        left: 200px
+        height: calc(100vh - 100px)
+        .main-visual
+            width: 60%
+            height: 100%
+            overflow: hidden
+            img
+                width: 100%
+                height: 100%
+                &:hover
+                    opacity: 0.8
+                    transition-duration: 0.5s
+                    transform: scale(1.05)
+        .sub-visual
+            width: 40%
+            height: 100%
+            flex-direction: column
+            div
+                max-width: 100%
+                height: 50%
+                overflow: hidden
+                img
+                    width: 100%
+                    height: 100%
+                    &:hover
+                        opacity: 0.8
+                        transition-duration: 0.5s
+                        transform: scale(1.05)
+    @include sp
+        width: 100%
+        height: 120vh
+        position: relative
+        top: 50px
+        flex-direction: column
+        .main-visual
+            width: 100%
+            height: 33%
+            img
+                width: 100%
+                height: 100%
+        .sub-visual
+            width: 100%
+            height: 66%
+            flex-direction: column
+            img
+                width: 100%
+                height: 100%
+
+.sec-title 
+    width: 100%
+    height: 150px
+    padding: 50px
+    text-align: center
+
+.sel-wrapper
+    width: 100%
+    margin: 50px auto
+    ul
+        flex-wrap: wrap
+        @include pc
+            flex-direction: row
+            justify-content: center
+        @include sp
+            flex-direction: column
+
+.item-contents
+    box-shadow: 0px 3px 6px #00000029
+    border-radius: 10px
+    @include pc
+        width: 300px
+        height: 350px
+        margin: 10px
+    @include sp
+        width: 90vw
+        height: 40vh
+        margin: 0px auto 20px
+    &:hover
+        .item-txt
+            transition-duration: 0.5s
+            background-color: #F0EBE4
+        .item-img 
+            img
+                transform: scale(1.1)
+                transition-duration: 0.5s
+                opacity: 0.7
+.item-img
+    width: 100%
+    height: 65%
+    overflow: hidden
+    text-align: center
+    border-radius: 10px 10px 0px 0px
+    background-color: #ffffff
+    img
+        // max-height: 100%
+        // width: auto
+        height: 100%
+        width: 100%
+        border-radius: 10px 10px 0px 0px
+        display: block
+        transition-duration: 0.5s
+        @include sp
+            max-height: 100%
+            width: auto
+            margin: 0 auto 
+.item-txt
+    width: 100%
+    height: 35%
+    padding: 10px
+    background: #ffffff
+    border-radius: 0px 0px 10px 10px
+    h3
+        @include pc
+            font-size: 1.2rem
+        @include sp
+            font-size: 0.9rem
+    p
+        @include pc
+            font-size: 0.9rem
+            padding: 0.7rem 0
+        @include sp
+            font-size: 0.7rem
+            padding: 0.3rem 0
+
+.clas-wrapper
+    width: 100%
+    margin: 50px auto
+    @include sp
+        width: 100%
+    ul
+        flex-wrap: wrap
+        justify-content: center
+        .item-contents
+            @include pc
+                width: 220px
+                height: 220px
+            @include sp
+                width: 45vw
+                height: 45vw
+                margin: 3px
+        .item-img
+            height: 80%
+        .item-txt
+            height: 20%
+        
+.cat__wrapper
+    width: 100%
+    .w-inner
+        background-color: #ffffff
+        .cont-inner
+            background-color: #ffffff
+            .sec-title
+                background-color: #fff
+            .cat__menu
+                width: 90%
+                margin: 0 auto
+            .cat__menu__item
+                @include pc
+                    background: #ffffff
+                    color: #fff
+                    cursor: pointer
+                    display: block
+                    margin-bottom: 20px
+                    p
+                        padding: 1.5rem
+                    .cat__menu__item__link
+                        color: #000
+                        display: block
+                        line-height: 30px
+                        padding: 1rem
+                        position: relative
+                        font-weight: bold
+                        img
+                            width: 60px
+                            height: 60px
+                            vertical-align: middle
+                        .fa-plus
+                            display: none
+                    .cat__submenu
+                        background: #fff
+                        display: flex
+                        flex-direction: row
+                        flex-wrap: wrap
+                        width: 90%
+                        margin: 0 auto
+                        .cat__submenu__item
+                            width: 33%
+                            color: #222
+                            padding: 0.5rem
+                            margin: 20px 0
+                            a
+                                display: inline-block
+                                &:hover
+                                    font-weight: bold
+                                    color: #F2646E
+                            img
+                                display: inline-block
+                                width: 60px
+                                height: 60px
+                                vertical-align: middle
+                                margin-right: 20px
+                @include sp
+                    background: #ffffff
+                    color: #fff
+                    cursor: pointer
+                    display: block
+                    margin-bottom: 1px
+                    p
+                        padding: 1rem
+                    .cat__menu__item__link
+                        color: #000
+                        display: block
+                        line-height: 30px
+                        padding: 1rem 0
+                        position: relative
+                        border-bottom: 1px solid #f7f7f7
+                        .cat__menu__item__title
+                            display: inline-block
+                            width: 90%
+                            img
+                                width: 30px
+                                height: 30px
+                                vertical-align: middle
+                        .fa-plus
+                            display: inline-block
+                            width: 5%
+                            text-align: right
+                            transition-duration: 0.5s
+                        .open
+                            transition-duration: 0.5s
+                            transform: rotate(45deg)
+                    .cat__submenu
+                        background: #fff
+                        display: none
+                        .cat__submenu__item
+                            border-bottom: 1px solid #f5f5f5
+                            color: #222
+                            padding: 0.5rem
+                            a
+                                display: inline-block
+                            img
+                                display: inline-block
+                                width: 40px
+                                height: 40px
+                                vertical-align: middle
+                                margin-right: 20px
+
+#nav-toggle
+    position: fixed
+    top: 0px
+    right: 0px
+    height: 50px
+    width: 50px
+    cursor: pointer
+    background-color: #F2646E
+    div 
+        position: relative
+        width: 25px
+        height: 50px
+        margin: 0 auto
+        span 
+            width: 100%
+            height: 2px
+            left: 0
+            display: block
+            background: #fff
+            position: absolute
+            transition: transform .3s ease-in-out, top .5s ease
+            /* #nav-toggle close */
+            &:nth-child(1) 
+                top: 17px
+            &:nth-child(2) 
+                top: 25px            
+            &:nth-child(3) 
+                top: 33px
+                &:hover span:nth-child(1) 
+                    top: 4px
+                &:hover span:nth-child(3) 
+                    top: 23px
+  
+  
+
+
+
+.open #nav-toggle span 
+  &:nth-child(1) 
+    top: 24px
+    transform: rotate(45deg)
+  &:nth-child(2) 
+    top: 15px
+    width: 0
+    left: 50%
+  &:nth-child(3) 
+    top: 24px
+    transform: rotate(-45deg)
+  
+/* z-index */
+#nav-toggle 
+    z-index: 1000
+// #container 
+//     z-index: 900
+#gloval-nav nav 
+    z-index: 999
+    overflow: scroll
+
+
+#gloval-nav 
+    // background-image: linear-gradient(-45deg, #FF00BF, #FFEA00)
+    background-color: #fff
+    position: fixed
+    width: 100%
+    top: 50px
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 990
+    display: flex
+    flex-direction: column
+    justify-content: center
+    font-size: 15px
+    padding-left: 0
+    transform: translateX(-100%)
+    transition:  transform 1s ease
+.open #gloval-nav 
+    transform: translateX(0)
+
+
+#gloval-nav 
+  a
+    display: inline-block
+    color: #000
+    text-decoration: none
+    padding: 10px 0
+    transition: color .6s ease
+  ul 
+    list-style: none
+    .cat__menu__item
+        @include sp
+            transform: translateX(-200px)
+            transition:  transform 1.3s ease
+            position: relative
+            background: #F0EBE4
+            color: #fff
+            cursor: pointer
+            display: block
+            margin-bottom: 1px
+            p
+                padding: 1rem
+            .cat__menu__item__link
+                color: #000
+                display: block
+                line-height: 30px
+                padding: 1rem
+                position: relative
+                border-bottom: 1px solid #f7f7f7
+                .cat__menu__item__title
+                    display: inline-block
+                    width: 90%
+                    img
+                        width: 30px
+                        height: 30px
+                        vertical-align: middle
+                .fa-plus
+                    display: inline-block
+                    width: 5%
+                    text-align: right
+                    transition-duration: 0.5s
+                .open
+                    transition-duration: 0.5s
+                    transform: rotate(45deg)
+            .cat__submenu
+                background: #E6E1DB
+                display: none
+                .cat__submenu__item
+                    border-bottom: 1px solid #f5f5f5
+                    color: #222
+                    padding: 0.5rem
+                    a
+                        display: inline-block
+                    img
+                        display: inline-block
+                        width: 40px
+                        height: 40px
+                        vertical-align: middle
+                        margin-right: 20px
+
+    li 
+      transform: translateX(-100%)
+      transition:  transform 1.3s ease
+      position: relative
+    //   &:after 
+    //     content: ""
+    //     display: block
+    //     width: 100vw
+    //     height: 2px
+    //     background: #000
+    //     left: -600px
+    //     position: absolute
+    //     transform: translateX(0)
+    //     transition: transform 1s ease
+      &:hover:after 
+        transform: translateX(100%)
+
+.open #gloval-nav li 
+    transform: translateX(0)
