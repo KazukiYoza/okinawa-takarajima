@@ -184,6 +184,7 @@ footer .w-inner .cont-inner .fot-info div {
 @media (max-width: 480px) {
   footer .w-inner .cont-inner .fot-info div {
     width: 100%;
+    height: 250px;
     padding: 1rem;
     margin: 1rem 0;
   }
@@ -494,7 +495,7 @@ footer .w-inner .cont-inner ul li {
 @media (max-width: 480px) {
   .item-contents {
     width: 90vw;
-    height: 40vh;
+    height: 300px;
     margin: 0px auto 20px;
   }
 }
@@ -547,16 +548,8 @@ footer .w-inner .cont-inner ul li {
   border-radius: 0px 0px 10px 10px;
 }
 
-@media (min-width: 960px) {
-  .item-txt h3 {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .item-txt h3 {
-    font-size: 0.9rem;
-  }
+.item-txt h3 {
+  font-size: 1.2rem;
 }
 
 @media (min-width: 960px) {
@@ -568,7 +561,7 @@ footer .w-inner .cont-inner ul li {
 
 @media (max-width: 480px) {
   .item-txt p {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     padding: 0.3rem 0;
   }
 }
