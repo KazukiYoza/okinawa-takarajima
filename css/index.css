@@ -608,6 +608,10 @@ footer .w-inner .cont-inner ul li {
   height: 20%;
 }
 
+.clas-wrapper ul .item-txt h3 {
+  font-size: 0.8rem;
+}
+
 .cat__wrapper {
   width: 100%;
 }
