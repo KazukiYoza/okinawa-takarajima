@@ -174,7 +174,7 @@ footer .w-inner .cont-inner .fot-info {
 
 footer .w-inner .cont-inner .fot-info div {
   width: 300px;
-  height: 280px;
+  height: 290px;
   position: relative;
   background-color: #fff;
   padding: 2rem;
@@ -301,6 +301,10 @@ footer .w-inner .cont-inner ul li {
   width: 200px;
   height: 100vh;
   background-color: #E6E1DB;
+}
+
+.sidebar ul li .nav-child li > a:hover {
+  color: #F2646E;
 }
 
 @media (min-width: 960px) {
@@ -545,6 +549,12 @@ footer .w-inner .cont-inner ul li {
   padding: 10px;
   background: #ffffff;
   border-radius: 0px 0px 10px 10px;
+}
+
+@media (max-width: 480px) {
+  .item-txt {
+    padding: 5px;
+  }
 }
 
 .item-txt h3 {

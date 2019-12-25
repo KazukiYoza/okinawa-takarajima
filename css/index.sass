@@ -144,7 +144,7 @@ footer
                     flex-direction: column
                 div
                     width: 300px
-                    height: 280px
+                    height: 290px
                     position: relative
                     background-color: #fff
                     // border: 1px double #a1a1a1
@@ -242,6 +242,9 @@ footer
                 width: 200px
                 height: 100vh
                 background-color: #E6E1DB
+                li > a
+                    &:hover
+                        color: #F2646E
 
 // メイン部分
 .main
@@ -393,6 +396,8 @@ footer
     padding: 10px
     background: #ffffff
     border-radius: 0px 0px 10px 10px
+    @include sp
+        padding: 5px
     h3
         font-size: 1.2rem
     p
