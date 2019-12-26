@@ -1,7 +1,6 @@
 // 変数の設定    
-$pc: 960px
-$sp: 480px
-$tb: 959px
+$pc: 769px
+$sp: 768px
 
 $hd-color: white//ヘッダーの色
 $mn-color: #F7F3ED//メイン部分の色 
@@ -9,7 +8,7 @@ $sd-color: #F0EBE4//サイドバーの色
 $ft-color: #e8d1ff//フッターの色
 
 @mixin font()
-    font-family: "Meiryo", "Hiragino kaku Gothic ProN", sans-serif//'M PLUS Rounded 1c', sans-serif
+    font-family: 'Quicksand',"Meiryo", "Hiragino kaku Gothic ProN", sans-serif//'M PLUS Rounded 1c', sans-serif
     // font-weight: 400
     color: #555555
 
@@ -17,9 +16,9 @@ $ft-color: #e8d1ff//フッターの色
 @mixin pc 
   @media (min-width: ($pc)) 
     @content
-      
-@mixin tb
-    @media (max-width: ($tb))
+
+@mixin tab
+    @media (min-width: (560px))and(max-width: (960px))
         @content
 
 @mixin sp 
@@ -95,7 +94,7 @@ header
             margin: auto
             height: 30px
             &::placeholder
-                font-size: 12px        
+                font-size: 12px       
     #sbtn //検索ボタン
         width: 70px //検索ボタンの横幅 
         position: absolute //検索ボタンの絶対位置 
@@ -113,7 +112,7 @@ header
         @include sp
             left: 80%
             height: 30px //検索ボタンの縦幅
-            font-size: 12px //検索ボタンのフォントサイズ 
+            font-size: 12px //検索ボタンのフォントサイズ
         &:hover //検索ボタンマウスオーバー時
             color: #666 //検索ボタンマウスオーバー時のフォントカラー
 .pc-nav
@@ -156,6 +155,8 @@ footer
                 justify-content: center
                 @include sp
                     flex-direction: column
+                @include tab
+                    flex-direction: row
                 div
                     width: 300px
                     height: 290px
@@ -169,15 +170,25 @@ footer
                         height: 250px
                         padding: 1rem
                         margin: 1rem 0
+                    @include tab
+                        width: 30%
+                        margin: 1rem
                     h3
                         font-size: 1rem
                         border-bottom: 2px solid #a1a1a1
                         margin: 1rem 0
+                        @include tab
+                            font-size: 0.9rem
                     .tel
                         display: inline-block
                         font-size: 1.3rem
                         font-weight: bold
                         margin: 5px 0px
+                        @include tab
+                            font-size: 0.9rem
+                    p
+                        @include tab
+                            font-size: 0.7rem
             .fot-logo
                 // width: 30%
                 // height: 10%
@@ -293,18 +304,49 @@ footer
         margin: 0 auto
         padding: 0.1rem
 
-
 // PICKUPエリア
 .pickup-wrapper
+    position: relative
     @include pc
         width: calc(100vw - 200px)
-        position: relative
         top: 100px
         left: 200px
         height: calc(100vh - 100px)
-        .main-visual
+    @include sp
+        width: 100%
+        // height: 120vh
+        position: relative
+        top: 50px
+        flex-direction: column
+    .main-visual
+        @include pc
             width: 60%
             height: 100%
+            overflow: hidden
+        @include sp
+            width: 100%
+            height: 34%
+        img
+            width: 100%
+            height: 100%
+            &:hover
+                opacity: 0.8
+                transition-duration: 0.5s
+                transform: scale(1.05)
+    .sub-visual
+        width: 40%
+        height: 100%
+        flex-direction: column
+        @include sp
+            width: 100%
+            height: 66%
+        @include tab
+            flex-direction: row
+            width: 100%
+            height: 30%
+        div
+            max-width: 100%
+            height: 50%
             overflow: hidden
             img
                 width: 100%
@@ -313,40 +355,6 @@ footer
                     opacity: 0.8
                     transition-duration: 0.5s
                     transform: scale(1.05)
-        .sub-visual
-            width: 40%
-            height: 100%
-            flex-direction: column
-            div
-                max-width: 100%
-                height: 50%
-                overflow: hidden
-                img
-                    width: 100%
-                    height: 100%
-                    &:hover
-                        opacity: 0.8
-                        transition-duration: 0.5s
-                        transform: scale(1.05)
-    @include sp
-        width: 100%
-        // height: 120vh
-        position: relative
-        top: 50px
-        flex-direction: column
-        .main-visual
-            width: 100%
-            height: 34%
-            img
-                width: 100%
-                height: 100%
-        .sub-visual
-            width: 100%
-            height: 66%
-            flex-direction: column
-            img
-                width: 100%
-                height: 100%
 
 .sec-title 
     width: 100%
@@ -364,7 +372,9 @@ footer
             justify-content: center
         @include sp
             flex-direction: column
-
+        @include tab
+            flex-direction: row
+            justify-content: space-around
 .item-contents
     box-shadow: 0px 3px 6px #00000029
     border-radius: 10px
@@ -376,6 +386,8 @@ footer
         width: 90vw
         height: 300px
         margin: 0px auto 20px
+    @include tab
+        width: 43vw
     &:hover
         .item-txt
             transition-duration: 0.5s
@@ -438,6 +450,10 @@ footer
                 width: 45vw
                 height: 45vw
                 margin: 3px
+            @include tab
+                width: 30vw
+                height: 30vw
+                margin: 5px
         .item-img
             height: 80%
         .item-txt
