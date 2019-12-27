@@ -18,6 +18,11 @@ html h3 {
   color: #555555;
 }
 
+html img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .fbox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -220,7 +225,7 @@ footer .w-inner .cont-inner .fot-info {
   }
 }
 
-@media (min-width: 560px) and (max-width: 960px) {
+@media (min-width: 560px) and (max-width: 1024px) {
   footer .w-inner .cont-inner .fot-info {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -247,7 +252,7 @@ footer .w-inner .cont-inner .fot-info div {
   }
 }
 
-@media (min-width: 560px) and (max-width: 960px) {
+@media (min-width: 560px) and (max-width: 1024px) {
   footer .w-inner .cont-inner .fot-info div {
     width: 30%;
     margin: 1rem;
@@ -260,7 +265,7 @@ footer .w-inner .cont-inner .fot-info div h3 {
   margin: 1rem 0;
 }
 
-@media (min-width: 560px) and (max-width: 960px) {
+@media (min-width: 560px) and (max-width: 1024px) {
   footer .w-inner .cont-inner .fot-info div h3 {
     font-size: 0.9rem;
   }
@@ -273,13 +278,13 @@ footer .w-inner .cont-inner .fot-info div .tel {
   margin: 5px 0px;
 }
 
-@media (min-width: 560px) and (max-width: 960px) {
+@media (min-width: 560px) and (max-width: 1024px) {
   footer .w-inner .cont-inner .fot-info div .tel {
     font-size: 0.9rem;
   }
 }
 
-@media (min-width: 560px) and (max-width: 960px) {
+@media (min-width: 560px) and (max-width: 1024px) {
   footer .w-inner .cont-inner .fot-info div p {
     font-size: 0.7rem;
   }
@@ -452,7 +457,7 @@ footer .w-inner .cont-inner ul li {
     width: calc(100vw - 200px);
     top: 100px;
     left: 200px;
-    height: calc(100vh - 100px);
+    max-width: 2500px;
   }
 }
 
@@ -470,7 +475,7 @@ footer .w-inner .cont-inner ul li {
 
 @media (min-width: 769px) {
   .pickup-wrapper .main-visual {
-    width: 60%;
+    width: 100%;
     height: 100%;
     overflow: hidden;
   }
@@ -497,7 +502,7 @@ footer .w-inner .cont-inner ul li {
 }
 
 .pickup-wrapper .sub-visual {
-  width: 40%;
+  width: 100%;
   height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -512,7 +517,7 @@ footer .w-inner .cont-inner ul li {
   }
 }
 
-@media (min-width: 560px) and (max-width: 960px) {
+@media (min-width: 560px) and (max-width: 1024px) {
   .pickup-wrapper .sub-visual {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -580,7 +585,7 @@ footer .w-inner .cont-inner ul li {
   }
 }
 
-@media (min-width: 560px) and (max-width: 960px) {
+@media (min-width: 560px) and (max-width: 1024px) {
   .sel-wrapper ul {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -613,7 +618,7 @@ footer .w-inner .cont-inner ul li {
   }
 }
 
-@media (min-width: 560px) and (max-width: 960px) {
+@media (min-width: 560px) and (max-width: 1024px) {
   .item-contents {
     width: 43vw;
   }
@@ -725,7 +730,7 @@ footer .w-inner .cont-inner ul li {
   }
 }
 
-@media (min-width: 560px) and (max-width: 960px) {
+@media (min-width: 560px) and (max-width: 1024px) {
   .clas-wrapper ul .item-contents {
     width: 30vw;
     height: 30vw;

@@ -18,7 +18,7 @@ $ft-color: #e8d1ff//フッターの色
     @content
 
 @mixin tab
-    @media (min-width: (560px))and(max-width: (960px))
+    @media (min-width: (560px))and(max-width: (1024px))
         @content
 
 @mixin sp 
@@ -39,6 +39,8 @@ html
     h3
         font-size: 20px
         @include font()
+    img
+        object-fit: cover
 
 .fbox
     display: flex
@@ -311,7 +313,8 @@ footer
         width: calc(100vw - 200px)
         top: 100px
         left: 200px
-        height: calc(100vh - 100px)
+        max-width: 2500px
+        // height: calc(100vh - 100px)
     @include sp
         width: 100%
         // height: 120vh
@@ -320,7 +323,7 @@ footer
         flex-direction: column
     .main-visual
         @include pc
-            width: 60%
+            width: 100%
             height: 100%
             overflow: hidden
         @include sp
@@ -334,7 +337,7 @@ footer
                 transition-duration: 0.5s
                 transform: scale(1.05)
     .sub-visual
-        width: 40%
+        width: 100%
         height: 100%
         flex-direction: column
         @include sp
