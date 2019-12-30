@@ -1075,7 +1075,6 @@ footer .w-inner .cont-inner ul li {
             transition-duration: 0.5s;
   }
   #gloval-nav ul .cat__menu__item .cat__menu__item__link .open {
-    height: 100vh;
     -webkit-transition-duration: 0.5s;
             transition-duration: 0.5s;
     -webkit-transform: rotate(45deg);
