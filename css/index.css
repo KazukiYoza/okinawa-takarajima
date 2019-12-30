@@ -499,7 +499,7 @@ footer .w-inner .cont-inner ul li {
 }
 
 .pickup-wrapper .main-visual img:hover {
-  opacity: 0.8;
+  opacity: 0.7;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   -webkit-transform: scale(1.05);
@@ -824,13 +824,14 @@ footer .w-inner .cont-inner ul li {
     margin: 0 auto;
   }
   .cat__wrapper .w-inner .cont-inner .cat__menu__item .cat__submenu .cat__submenu__item {
-    width: 33%;
+    width: 25%;
     color: #222;
     padding: 0.5rem;
     margin: 20px 0;
   }
   .cat__wrapper .w-inner .cont-inner .cat__menu__item .cat__submenu .cat__submenu__item a {
     display: inline-block;
+    font-size: 13px;
   }
   .cat__wrapper .w-inner .cont-inner .cat__menu__item .cat__submenu .cat__submenu__item a:hover {
     font-weight: bold;
