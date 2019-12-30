@@ -79,6 +79,7 @@ header
         @include pc
             margin-bottom: 15px //フォームの下に余白
         @include sp
+            position: inherit
             margin: 10px auto
     #sbox //検索ボックス
         position: absolute //フォームの絶対位置
@@ -96,7 +97,8 @@ header
         @include sp
             margin: auto
             height: 40px
-            width: 285px
+            width: 90vw
+            left: 0
             &::placeholder
                 font-size: 12px       
     #sbtn //検索ボタン
@@ -116,6 +118,7 @@ header
         @include sp
             left: 80%
             height: 40px //検索ボタンの縦幅
+            width: 20vw
             font-size: 12px //検索ボタンのフォントサイズ
         &:hover //検索ボタンマウスオーバー時
             color: #666 //検索ボタンマウスオーバー時のフォントカラー

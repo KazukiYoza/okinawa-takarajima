@@ -90,6 +90,7 @@ header {
 
 @media (max-width: 768px) {
   .search-box #form1 {
+    position: inherit;
     margin: 10px auto;
   }
 }
@@ -116,7 +117,8 @@ header {
   .search-box #sbox {
     margin: auto;
     height: 40px;
-    width: 285px;
+    width: 90vw;
+    left: 0;
   }
   .search-box #sbox::-webkit-input-placeholder {
     font-size: 12px;
@@ -155,6 +157,7 @@ header {
   .search-box #sbtn {
     left: 80%;
     height: 40px;
+    width: 20vw;
     font-size: 12px;
   }
 }
