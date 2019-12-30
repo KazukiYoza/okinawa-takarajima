@@ -717,8 +717,8 @@ footer .w-inner .cont-inner ul li {
 
 @media (min-width: 769px) {
   .clas-wrapper ul .item-contents {
-    width: 220px;
-    height: 220px;
+    width: 300px;
+    height: 250px;
   }
 }
 
@@ -740,6 +740,12 @@ footer .w-inner .cont-inner ul li {
 
 .clas-wrapper ul .item-img {
   height: 80%;
+}
+
+.clas-wrapper ul .item-img img {
+  margin: 0 auto;
+  max-height: 100%;
+  width: auto;
 }
 
 .clas-wrapper ul .item-txt {
