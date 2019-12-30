@@ -84,9 +84,10 @@ header
         position: absolute //フォームの絶対位置
         outline: 0 //クリック時の青い枠線消す
         height: 50px //検索ボックスの高さ
+        width: 300px
         padding: 0 10px //テキスト位置調整
         border: 1px solid #D7D2CC
-        border-radius: 10px 0 0 10px //検索ボックスの角を丸める
+        border-radius: 20px //検索ボックスの角を丸める
         //background: #eee //検索ボックスの背景カラー
         background-color: #fff
         @include pc
@@ -94,13 +95,14 @@ header
             top: 20px
         @include sp
             margin: auto
-            height: 30px
+            height: 40px
+            width: 285px
             &::placeholder
                 font-size: 12px       
     #sbtn //検索ボタン
         width: 70px //検索ボタンの横幅 
         position: absolute //検索ボタンの絶対位置 
-        border-radius: 0 10px 10px 0 //検索ボタンの角を丸める 
+        border-radius: 0 20px 20px 0 //検索ボタンの角を丸める 
         //background: #7fbfff //検索ボタンの背景カラー 
         background-color: #8B7F78
         border: none //検索ボタンの枠線を消す
@@ -113,7 +115,7 @@ header
             font-size: 16px //検索ボタンのフォントサイズ
         @include sp
             left: 80%
-            height: 30px //検索ボタンの縦幅
+            height: 40px //検索ボタンの縦幅
             font-size: 12px //検索ボタンのフォントサイズ
         &:hover //検索ボタンマウスオーバー時
             color: #666 //検索ボタンマウスオーバー時のフォントカラー
@@ -408,17 +410,18 @@ footer
     border-radius: 10px 10px 0px 0px
     background-color: #ffffff
     img
-        // max-height: 100%
+        max-height: 100%
         // width: auto
         height: 100%
         width: 100%
+        margin: 0 auto
         border-radius: 10px 10px 0px 0px
         display: block
         transition-duration: 0.5s
         @include sp
             max-height: 100%
-            width: auto
-            margin: 0 auto 
+            // width: auto
+            // margin: 0 auto 
 .item-txt
     width: 100%
     height: 35%
@@ -693,6 +696,7 @@ footer
                     text-align: right
                     transition-duration: 0.5s
                 .open
+                    height: 100vh
                     transition-duration: 0.5s
                     transform: rotate(45deg)
             .cat__submenu
@@ -720,3 +724,7 @@ footer
 
 .open #gloval-nav li 
     transform: translateX(0)
+
+.fa-plus:before    
+    font-size: 20px;
+    vertical-align: middle;
