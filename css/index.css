@@ -1053,6 +1053,12 @@ footer .w-inner .cont-inner ul li {
   #gloval-nav ul .cat__menu__item p {
     padding: 1rem;
   }
+  #gloval-nav ul .cat__menu__item a:nth-of-type(1) {
+    padding: 1rem;
+  }
+  #gloval-nav ul .cat__menu__item a:last-of-type {
+    padding: 1rem;
+  }
   #gloval-nav ul .cat__menu__item .cat__menu__item__link {
     color: #000;
     display: block;
