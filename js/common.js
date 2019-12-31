@@ -50,7 +50,7 @@ $('.cat__menu__item__link').on('click',function(){
 	var sp = '_sp.jpg';
 	var pc = '.jpg';
 	// 画像を切り替えるウィンドウサイズ。
-	var replaceWidth = 769;
+	var replaceWidth = 1025;
 	function imageSwitch() {
 		// ウィンドウサイズを取得する。
 		// var windowWidth = parseInt(window.innerWidth);
@@ -58,11 +58,11 @@ $('.cat__menu__item__link').on('click',function(){
 		// ページ内にあるすべての`.js-image-switch`に適応される。
 		$elem.each(function() {
 			var $this = $(this);
-			// ウィンドウサイズが768px以上であれば_spを_pcに置換する。
+			// ウィンドウサイズが1025px以上であれば_spを_pcに置換する。
 			if(windowWidth >= replaceWidth) {
 				$this.attr('src', $this.attr('src').replace(sp, pc));
 
-			// ウィンドウサイズが768px未満であれば_pcを_spに置換する。
+			// ウィンドウサイズが1025px未満であれば_pcを_spに置換する。
 			} else {
 				$this.attr('src', $this.attr('src').replace(pc, sp));
 			}

@@ -1,6 +1,6 @@
 // 変数の設定    
-$pc: 769px
-$sp: 768px
+$pc: 1025px
+$sp: 1024px
 
 $hd-color: white//ヘッダーの色
 $mn-color: #F7F3ED//メイン部分の色 
@@ -8,7 +8,8 @@ $sd-color: #F0EBE4//サイドバーの色
 $ft-color: #e8d1ff//フッターの色
 
 @mixin font()
-    font-family: 'Quicksand',"Meiryo", "Hiragino kaku Gothic ProN", sans-serif//'M PLUS Rounded 1c', sans-serif
+    font-family: 'Kosugi Maru',"Meiryo", "Hiragino kaku Gothic ProN", sans-serif
+    // font-family: 'M PLUS Rounded 1c', sans-serif
     // font-weight: 400
     color: #555555
 
@@ -32,10 +33,12 @@ html
         font-size: 15px
         list-style: none
         text-decoration: none
+        line-height: 22px
         @include font
     h2
         font-size: 30px
         @include font
+        font-family: "Hiragino kaku Gothic ProN", sans-serif
     h3
         font-size: 20px
         @include font()
@@ -61,6 +64,8 @@ header
     z-index: 100
     @include sp
         height: 50px
+    @include tab
+        height: 100px
 .logo
     width: 15%
     height: 100%
@@ -326,6 +331,8 @@ footer
         position: relative
         top: 50px
         flex-direction: column
+    @include tab
+        top: 100px
     .main-visual
         @include pc
             width: 100%
@@ -472,7 +479,11 @@ footer
         .item-txt
             height: 20%
             h3
-                font-size: 0.8rem
+                font-size: 1rem
+                @include sp
+                    font-size: 3vw
+                @include tab
+                    font-size: 1rem
         
 .cat__wrapper
     width: 100%
@@ -515,10 +526,10 @@ footer
                         width: 90%
                         margin: 0 auto
                         .cat__submenu__item
-                            width: 25%//33%
+                            width: 33%
                             color: #222
                             padding: 0.5rem
-                            margin: 20px 0
+                            margin: 10px 0
                             a
                                 display: inline-block
                                 font-size: 13px
@@ -573,11 +584,12 @@ footer
                                 width: 100%
                             img
                                 display: inline-block
-                                width: 40px
-                                height: 40px
+                                width: 50px
+                                height: 50px
                                 vertical-align: middle
-                                margin-right: 20px
+                                margin-right: 10px
 
+// ハンバーガーメニューボタン
 #nav-toggle
     position: fixed
     top: 0px
@@ -586,11 +598,17 @@ footer
     width: 50px
     cursor: pointer
     background-color: #F2646E
+    @include tab
+        width: 100px
+        height: 100px
     div 
         position: relative
         width: 25px
         height: 50px
         margin: 0 auto
+        @include tab
+            width: 50px
+            height: 100px
         span 
             width: 100%
             height: 2px
@@ -610,11 +628,19 @@ footer
                     top: 4px
                 &:hover span:nth-child(3) 
                     top: 23px
-  
-  
+            @include tab
+                &:nth-child(1) 
+                    top: 30px
+                &:nth-child(2) 
+                    top: 50px            
+                &:nth-child(3) 
+                    top: 70px
+                    &:hover span:nth-child(1) 
+                        top: 4px
+                    &:hover span:nth-child(3) 
+                        top: 23px            
 
-
-
+// ハンバーガーメニューOPEN時
 .open #nav-toggle span 
   &:nth-child(1) 
     top: 24px
@@ -626,8 +652,19 @@ footer
   &:nth-child(3) 
     top: 24px
     transform: rotate(-45deg)
+  @include tab
+    &:nth-child(1) 
+        top: 50px
+        transform: rotate(45deg)
+    &:nth-child(2) 
+        top: 15px
+        width: 0
+        left: 50%
+    &:nth-child(3) 
+        top: 50px
+        transform: rotate(-45deg)
   
-/* z-index */
+/*  */
 #nav-toggle 
     z-index: 1000
 // #container 
@@ -719,10 +756,10 @@ footer
                         display: inline-block
                     img
                         display: inline-block
-                        width: 40px
-                        height: 40px
+                        width: 50px
+                        height: 50px
                         vertical-align: middle
-                        margin-right: 20px
+                        margin-right: 10px
 
     li 
       transform: translateX(-100%)
