@@ -838,7 +838,7 @@ footer .w-inner .cont-inner ul li {
 
 @media (max-width: 1024px) {
   .item-txt {
-    padding: 5px;
+    padding: 10px;
   }
 }
 
@@ -1016,7 +1016,9 @@ footer .w-inner .cont-inner ul li {
 }
 
 .clas-wrapper ul .item-txt {
+  background-color: #faf4eb;
   height: 20%;
+  padding: 7px;
 }
 
 .clas-wrapper ul .item-txt h3 {
